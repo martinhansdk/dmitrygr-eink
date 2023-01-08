@@ -3,7 +3,7 @@ LD = arm-none-eabi-gcc
 OBJCOPY	= arm-none-eabi-objcopy
 LKR		= nrf52.lkr
 LTO		= -flto
-COMMON	= -g -ggdb3 -Os -mthumb -march=armv7e-m  -fomit-frame-pointer -I. $(LTO) -munaligned-access -fno-strict-aliasing -Wall -Werror -fsection-anchors -fconserve-stack -Wno-error=unused-function
+COMMON	= -g -ggdb3 -Os -mthumb -march=armv7e-m  -fomit-frame-pointer -I. $(LTO) -munaligned-access -fno-strict-aliasing -Wall -Werror -fsection-anchors -fconserve-stack -Wno-error=unused-function -Wno-error=missing-attributes
 CCFLAGS	= $(COMMON) -ffunction-sections -fdata-sections -DNRF52840_XXAA
 LDFLAGS	= $(COMMON) -Wl,--gc-sections -Wl,-T $(LKR)
 
@@ -27,4 +27,3 @@ $(APP).elf: $(OBJS) $(LKR)
 
 clean:
 	rm -rf $(OBJS) $(APP).bin $(APP).elf
-
