@@ -1,5 +1,4 @@
 #include <stdbool.h>
-#include "datamatrix.h"
 #include "barcode.h"
 #include "asmUtil.h"
 #include "drawing.h"
